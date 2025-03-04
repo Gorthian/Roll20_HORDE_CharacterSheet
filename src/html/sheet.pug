@@ -7,9 +7,35 @@
     * START src/html/sheet.pug
     ********************************
 
+//- MIXINs
+mixin attribut(attribut)
+    // MIXIN : src/html/sheet.pug : attribut
+    div(class="sheet-attribut")
+        h1(data-i18n=attribut)
+        input(type="number" value="" name="attr_"+attribut)
+        span(data-i18n="basis")
+        span(data-i18n="bonus")
+        input(type="number" value="" name="attr_"+attribut+"_bonus")
+
 div(class="sheet-horde")
-    div(class="sheet-kopfzeile") Logo / Name / Lebenspunkte & Klasse 
-    div(class="sheet-attribute") Attribute
+    div(class="sheet-kopfzeile")
+        div(class="sheet-logo") Logo 
+        div(class="sheet-name")
+            span(data-i18n="name")
+            input(type="text" value="" name="attr_character_name")
+        div(class="sheet-health")
+            span(data-i18n="health")
+            input(type="number" value="" name="attr_hp")
+            input(type="number" value="" name="attr_hp_max")
+        div(class="sheet-klasse")
+            span(data-i18n="klasse")
+            input(type="text" value="" name="attr_klasse") 
+    div(class="sheet-attribute")
+        +attribut("intelligenz")
+        +attribut("mut")
+        +attribut("koerperkraft")
+        +attribut("geschick")
+        +attribut("charisma")
     div(class="sheet-staerken-schwaechen-notizen")
         div(class="sheet-starken-schwaechen") Stärken & Schwächen 
         div(class="sheet-notizen") Notizen 

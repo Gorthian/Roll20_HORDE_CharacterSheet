@@ -1,3 +1,12 @@
 {
-    
+    "basis"         : "Basis",
+    "bonus"         : "Bonus",
+    "charisma"      : "Charisma",
+    "geschick"      : "Geschick",
+    "health"        : "Lebenspunkte",
+    "intelligenz"   : "Intelligenz",
+    "klasse"        : "Klasse",
+    "koerperkraft"  : "Körperkraft",
+    "mut"           : "Mut",
+    "name"          : "Name"
 }

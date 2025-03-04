@@ -22,8 +22,51 @@ Bugs & Issues
 
 -->
 <div class="sheet-horde">
-  <div class="sheet-kopfzeile">Logo / Name / Lebenspunkte & Klasse </div>
-  <div class="sheet-attribute">Attribute</div>
+  <div class="sheet-kopfzeile">
+    <div class="sheet-logo">Logo </div>
+    <div class="sheet-name"><span data-i18n="name"></span>
+      <input type="text" value="" name="attr_character_name"/>
+    </div>
+    <div class="sheet-health"><span data-i18n="health"></span>
+      <input type="number" value="" name="attr_hp"/>
+      <input type="number" value="" name="attr_hp_max"/>
+    </div>
+    <div class="sheet-klasse"><span data-i18n="klasse"></span>
+      <input type="text" value="" name="attr_klasse"/>
+    </div>
+  </div>
+  <div class="sheet-attribute">
+    <!-- MIXIN : src/html/sheet.pug : attribut-->
+    <div class="sheet-attribut">
+      <h1 data-i18n="intelligenz"></h1>
+      <input type="number" value="" name="attr_intelligenz"/><span data-i18n="basis"></span><span data-i18n="bonus"></span>
+      <input type="number" value="" name="attr_intelligenz_bonus"/>
+    </div>
+    <!-- MIXIN : src/html/sheet.pug : attribut-->
+    <div class="sheet-attribut">
+      <h1 data-i18n="mut"></h1>
+      <input type="number" value="" name="attr_mut"/><span data-i18n="basis"></span><span data-i18n="bonus"></span>
+      <input type="number" value="" name="attr_mut_bonus"/>
+    </div>
+    <!-- MIXIN : src/html/sheet.pug : attribut-->
+    <div class="sheet-attribut">
+      <h1 data-i18n="koerperkraft"></h1>
+      <input type="number" value="" name="attr_koerperkraft"/><span data-i18n="basis"></span><span data-i18n="bonus"></span>
+      <input type="number" value="" name="attr_koerperkraft_bonus"/>
+    </div>
+    <!-- MIXIN : src/html/sheet.pug : attribut-->
+    <div class="sheet-attribut">
+      <h1 data-i18n="geschick"></h1>
+      <input type="number" value="" name="attr_geschick"/><span data-i18n="basis"></span><span data-i18n="bonus"></span>
+      <input type="number" value="" name="attr_geschick_bonus"/>
+    </div>
+    <!-- MIXIN : src/html/sheet.pug : attribut-->
+    <div class="sheet-attribut">
+      <h1 data-i18n="charisma"></h1>
+      <input type="number" value="" name="attr_charisma"/><span data-i18n="basis"></span><span data-i18n="bonus"></span>
+      <input type="number" value="" name="attr_charisma_bonus"/>
+    </div>
+  </div>
   <div class="sheet-staerken-schwaechen-notizen">
     <div class="sheet-starken-schwaechen">Stärken & Schwächen </div>
     <div class="sheet-notizen">Notizen </div>
@@ -37,6 +80,17 @@ Bugs & Issues
 <!--
 ********************************
 * ENDE src/html/sheet.pug
+********************************
+-->
+<!--
+********************************
+* START src/html/rolltemplates.pug
+********************************
+
+-->
+<!--
+********************************
+* ENDE src/html/rolltemplates.pug
 ********************************
 -->
 <!-- SHEET WORKERS-->

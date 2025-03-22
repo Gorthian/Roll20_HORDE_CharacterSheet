@@ -89,6 +89,35 @@ div.sheet-horde div.sheet-staerken-schwaechen div.sheet-staerken, div.sheet-hord
 	display: grid;
 }
 
+div.sheet-horde div.sheet-notizen, div.sheet-horde div.sheet-portrait-vergangenheit, div.sheet-horde div.sheet-inventar {
+	background-color: whitesmoke;
+	border-style: solid;
+	border-width: 2px;
+	border-color:black;
+
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: auto;
+}
+
+div.sheet-horde div.sheet-inventar div.sheet-item {
+	justify-self: stretch;
+
+	display: grid;
+	grid-template-columns: 25% auto;
+}
+
+div.sheet-horde div.sheet-inventar div.sheet-item input[type="text"] {
+	width: 100%
+}
+
+/* Eingabefelder */
 div.sheet-horde textarea {
 	width: 95%;
+	justify-self: center;
+}
+
+/* Überschriften */
+div.sheet-horde h2 {
+	justify-self: center;
 }

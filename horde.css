@@ -14,6 +14,8 @@ div.sheet-horde {
 	background-image: url(http://gorthian.de/roll20/horde/background.webp);
 
 	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: auto;
 }
 
 div.sheet-horde div.sheet-logo img {
@@ -30,13 +32,14 @@ div.sheet-horde div.sheet-kopfzeile {
 	width: 95%;
 	align-self: center;
 	justify-self: center;
+	margin-bottom: 10px;
 
 	display: grid;
 	grid-template-columns: 50% 50%;
 	grid-template-rows: auto;
 	grid-template-areas:
 		".	lebenspunkte"
-		"name klasse";	
+		"name klasse";
 }
 
 div.sheet-horde div.sheet-kopfzeile div.sheet-name {
@@ -50,4 +53,28 @@ div.sheet-horde div.sheet-kopfzeile div.sheet-lebenspunkte {
 
 div.sheet-horde div.sheet-kopfzeile div.sheet-klasse {
 	grid-area: klasse;
+}
+
+div.sheet-horde div.sheet-attribute {
+	width: 95%;
+	align-self: center;
+	justify-self: center;
+	margin-bottom: 10px;
+
+	display: grid;
+	grid-template-columns: 20% 20% 20% 20% 20%;
+}
+
+div.sheet-horde div.sheet-attribute div.sheet-attribut {
+	justify-self: stretch;
+	background-color: whitesmoke;
+	border-style: solid;
+	border-width: 2px;
+	border-color:black;
+
+	display: grid;
+}
+
+div.sheet-horde div.sheet-attribute div.sheet-attribut * {
+	justify-self: center;
 }

@@ -1,9 +1,22 @@
 /*
 	CREATED by 			Gorthian
 	Version				0.1
-	Letzte Änderung		2025-03-04
+	Letzte Änderung		2025-03-22
 	
 	GitHub				https://github.com/Gorthian/Roll20_HOREDE_CharacterSheet
 	Wiki				
 	Bugs & Issues		
 */
+
+div.sheet-horde {
+	border-color: red;
+	border-width: 0.1em;
+	border-style: solid;
+}
+
+div.sheet-horde div {
+	border-color: greenyellow;
+	border-width: 0.1em;
+	border-style: dashed;
+	border-radius: 5px;
+}

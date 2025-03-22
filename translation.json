@@ -8,5 +8,7 @@
     "klasse"        : "Klasse",
     "koerperkraft"  : "Körperkraft",
     "mut"           : "Mut",
-    "name"          : "Name"
+    "name"          : "Name",
+    "schwaechen"    : "Schwächen",
+    "staerken"      : "Stärken"
 }

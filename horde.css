@@ -20,6 +20,9 @@ div.sheet-horde {
 
 div.sheet-horde div.sheet-logo img {
 	width: 25%;
+
+	position:relative; 
+	top:30px;
 }
 
 div.sheet-horde div.sheet-horde-zeile {
@@ -89,7 +92,7 @@ div.sheet-horde div.sheet-staerken-schwaechen div.sheet-staerken, div.sheet-hord
 	display: grid;
 }
 
-div.sheet-horde div.sheet-notizen, div.sheet-horde div.sheet-portrait-vergangenheit, div.sheet-horde div.sheet-inventar {
+div.sheet-horde div.sheet-notizen, div.sheet-horde div.sheet-vergangenheit, div.sheet-horde div.sheet-inventar {
 	background-color: whitesmoke;
 	border-style: solid;
 	border-width: 2px;

@@ -115,9 +115,30 @@ div.sheet-horde div.sheet-inventar div.sheet-item input[type="text"] {
 }
 
 /* Eingabefelder */
+
+div.sheet-horde input[type='number']::-webkit-inner-spin-button, 
+div.sheet-horde input[type='number']::-webkit-outer-spin-button { 
+  opacity: 0;
+  margin-left: -14px;
+}
+
 div.sheet-horde textarea {
 	width: 95%;
 	justify-self: center;
+}
+
+div.sheet-horde div.sheet-attribut input.sheet-d20
+{
+	border-style: none;
+	background-image: url(http://gorthian.de/roll20/horde/d20.webp);
+	background-size: cover;
+	background-color: transparent;
+	width: 50px;
+	height: 50px;
+
+	text-align: center;
+	color: blanchedalmond;
+	font-weight: bold;	
 }
 
 /* Überschriften */

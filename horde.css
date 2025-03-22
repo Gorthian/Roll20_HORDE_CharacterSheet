@@ -9,14 +9,45 @@
 */
 
 div.sheet-horde {
-	border-color: red;
-	border-width: 0.1em;
-	border-style: solid;
+	border-style: none;
+	background-color: beige;
+	background-image: url(http://gorthian.de/roll20/horde/background.webp);
+
+	display: grid;
 }
 
-div.sheet-horde div {
-	border-color: greenyellow;
-	border-width: 0.1em;
-	border-style: dashed;
-	border-radius: 5px;
+div.sheet-horde div.sheet-logo img {
+	width: 25%;
+}
+
+div.sheet-horde div.sheet-kopfzeile {
+	background-color: whitesmoke;
+	border-style: solid;
+	border-width: 2px;
+	border-color:black;
+	-webkit-mask-image: radial-gradient(circle 20px at 0 100%, transparent 0, transparent 20px, black 22px);
+
+	width: 95%;
+	align-self: center;
+	justify-self: center;
+
+	display: grid;
+	grid-template-columns: 50% 50%;
+	grid-template-rows: auto;
+	grid-template-areas:
+		".	lebenspunkte"
+		"name klasse";	
+}
+
+div.sheet-horde div.sheet-kopfzeile div.sheet-name {
+	grid-area: name;
+	padding-left: 20px;
+}
+
+div.sheet-horde div.sheet-kopfzeile div.sheet-lebenspunkte {
+	grid-area: lebenspunkte;
+}
+
+div.sheet-horde div.sheet-kopfzeile div.sheet-klasse {
+	grid-area: klasse;
 }

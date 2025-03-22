@@ -118,8 +118,21 @@ div.sheet-horde div.sheet-inventar div.sheet-item input[type="text"] {
 
 div.sheet-horde input[type='number']::-webkit-inner-spin-button, 
 div.sheet-horde input[type='number']::-webkit-outer-spin-button { 
-  opacity: 0;
-  margin-left: -14px;
+	opacity: 0;
+	margin-left: -14px;
+}
+
+div.sheet-horde div.sheet-attribute div.sheet-attribut input.sheet-d20 {
+	display: block;
+	position: relative;
+	border-style: none;
+	text-align: center;
+	color: blanchedalmond;
+	font-weight: bold;
+	z-index: 2;
+
+	background-color: transparent;
+	top: 15px;
 }
 
 div.sheet-horde textarea {
@@ -127,18 +140,15 @@ div.sheet-horde textarea {
 	justify-self: center;
 }
 
-div.sheet-horde div.sheet-attribut input.sheet-d20
+/* Buttons */
+div.sheet-horde div.sheet-attribute button.sheet-d20
 {
-	border-style: none;
-	background-image: url(http://gorthian.de/roll20/horde/d20.webp);
-	background-size: cover;
-	background-color: transparent;
-	width: 50px;
-	height: 50px;
-
-	text-align: center;
-	color: blanchedalmond;
-	font-weight: bold;	
+	display: block;
+	position: relative;
+	border-style: none;	
+	width: 60px;
+	height: 60px;
+	top: -30px;		
 }
 
 /* Überschriften */

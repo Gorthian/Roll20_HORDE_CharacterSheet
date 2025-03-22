@@ -39,31 +39,36 @@ Bugs & Issues
     <!-- MIXIN : src/html/sheet.pug : attribut-->
     <div class="sheet-attribut">
       <h2 data-i18n="intelligenz"></h2>
-      <input class="sheet-d20" type="number" value="" name="attr_intelligenz"/><span data-i18n="basis"></span><span data-i18n="bonus"></span>
+      <input class="sheet-d20" type="number" value="" name="attr_intelligenz"/>
+      <button class="sheet-d20" type="action" name="act_probe-intelligenz"><img src="http://gorthian.de/roll20/horde/d20.webp"/></button><span data-i18n="basis"></span><span data-i18n="bonus"></span>
       <input type="number" value="" name="attr_intelligenz_bonus"/>
     </div>
     <!-- MIXIN : src/html/sheet.pug : attribut-->
     <div class="sheet-attribut">
       <h2 data-i18n="mut"></h2>
-      <input class="sheet-d20" type="number" value="" name="attr_mut"/><span data-i18n="basis"></span><span data-i18n="bonus"></span>
+      <input class="sheet-d20" type="number" value="" name="attr_mut"/>
+      <button class="sheet-d20" type="action" name="act_probe-mut"><img src="http://gorthian.de/roll20/horde/d20.webp"/></button><span data-i18n="basis"></span><span data-i18n="bonus"></span>
       <input type="number" value="" name="attr_mut_bonus"/>
     </div>
     <!-- MIXIN : src/html/sheet.pug : attribut-->
     <div class="sheet-attribut">
       <h2 data-i18n="koerperkraft"></h2>
-      <input class="sheet-d20" type="number" value="" name="attr_koerperkraft"/><span data-i18n="basis"></span><span data-i18n="bonus"></span>
+      <input class="sheet-d20" type="number" value="" name="attr_koerperkraft"/>
+      <button class="sheet-d20" type="action" name="act_probe-koerperkraft"><img src="http://gorthian.de/roll20/horde/d20.webp"/></button><span data-i18n="basis"></span><span data-i18n="bonus"></span>
       <input type="number" value="" name="attr_koerperkraft_bonus"/>
     </div>
     <!-- MIXIN : src/html/sheet.pug : attribut-->
     <div class="sheet-attribut">
       <h2 data-i18n="geschick"></h2>
-      <input class="sheet-d20" type="number" value="" name="attr_geschick"/><span data-i18n="basis"></span><span data-i18n="bonus"></span>
+      <input class="sheet-d20" type="number" value="" name="attr_geschick"/>
+      <button class="sheet-d20" type="action" name="act_probe-geschick"><img src="http://gorthian.de/roll20/horde/d20.webp"/></button><span data-i18n="basis"></span><span data-i18n="bonus"></span>
       <input type="number" value="" name="attr_geschick_bonus"/>
     </div>
     <!-- MIXIN : src/html/sheet.pug : attribut-->
     <div class="sheet-attribut">
       <h2 data-i18n="charisma"></h2>
-      <input class="sheet-d20" type="number" value="" name="attr_charisma"/><span data-i18n="basis"></span><span data-i18n="bonus"></span>
+      <input class="sheet-d20" type="number" value="" name="attr_charisma"/>
+      <button class="sheet-d20" type="action" name="act_probe-charisma"><img src="http://gorthian.de/roll20/horde/d20.webp"/></button><span data-i18n="basis"></span><span data-i18n="bonus"></span>
       <input type="number" value="" name="attr_charisma_bonus"/>
     </div>
   </div>
@@ -132,13 +137,33 @@ Bugs & Issues
 ********************************
 
 -->
+<rolltemplate class="sheet-rolltemplate-attributsprobe">
+  <div class="sheet-template-container"></div>
+  <div class="sheet-template-header">{{attribut}} vs {{attributswert}}</div>
+  <div class="sheet-template-row">{{wurf}}</div>
+  <div class="sheet-template-desc">Text</div>
+</rolltemplate>
 <!--
 ********************************
 * ENDE src/html/rolltemplates.pug
 ********************************
 -->
 <!-- SHEET WORKERS-->
-<script type="text/worker"></script>
+<script type="text/worker">on("clicked:probe-intelligenz", function() {
+    console.log("Probe auf Intelligenz");
+    startRoll("&{template:attributsprobe} {{attribut=Intelligenz}} {{roll=[[1d20]]}}", (results) => {
+        const total = results.results.roll.result
+        const computed = total;
+
+        finishRoll(
+            results.rollId,
+            {
+                roll: computed,
+            }
+        )}
+    );
+});
+</script>
 <!--
 ********************************
 * ENDE horde.pug

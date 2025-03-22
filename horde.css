@@ -22,17 +22,18 @@ div.sheet-horde div.sheet-logo img {
 	width: 25%;
 }
 
+div.sheet-horde div.sheet-horde-zeile {
+	width: 95%;
+	align-self: center;
+	justify-self: center;
+	margin-bottom: 10px;
+}
+
 div.sheet-horde div.sheet-kopfzeile {
 	background-color: whitesmoke;
 	border-style: solid;
 	border-width: 2px;
 	border-color:black;
-	-webkit-mask-image: radial-gradient(circle 20px at 0 100%, transparent 0, transparent 20px, black 22px);
-
-	width: 95%;
-	align-self: center;
-	justify-self: center;
-	margin-bottom: 10px;
 
 	display: grid;
 	grid-template-columns: 50% 50%;
@@ -44,7 +45,6 @@ div.sheet-horde div.sheet-kopfzeile {
 
 div.sheet-horde div.sheet-kopfzeile div.sheet-name {
 	grid-area: name;
-	padding-left: 20px;
 }
 
 div.sheet-horde div.sheet-kopfzeile div.sheet-lebenspunkte {
@@ -56,11 +56,6 @@ div.sheet-horde div.sheet-kopfzeile div.sheet-klasse {
 }
 
 div.sheet-horde div.sheet-attribute {
-	width: 95%;
-	align-self: center;
-	justify-self: center;
-	margin-bottom: 10px;
-
 	display: grid;
 	grid-template-columns: 20% 20% 20% 20% 20%;
 }
@@ -77,4 +72,23 @@ div.sheet-horde div.sheet-attribute div.sheet-attribut {
 
 div.sheet-horde div.sheet-attribute div.sheet-attribut * {
 	justify-self: center;
+}
+
+div.sheet-horde div.sheet-staerken-schwaechen {
+	display: grid;
+	grid-template-columns: 50% 50%;
+}
+
+div.sheet-horde div.sheet-staerken-schwaechen div.sheet-staerken, div.sheet-horde div.sheet-staerken-schwaechen div.sheet-schwaechen {
+	justify-self: stretch;
+	background-color: whitesmoke;
+	border-style: solid;
+	border-width: 2px;
+	border-color:black;
+
+	display: grid;
+}
+
+div.sheet-horde textarea {
+	width: 95%;
 }

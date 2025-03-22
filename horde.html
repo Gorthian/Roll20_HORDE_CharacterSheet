@@ -67,63 +67,61 @@ Bugs & Issues
       <input type="number" value="" name="attr_charisma_bonus"/>
     </div>
   </div>
-  <div class="sheet-staerken-schwaechen-notizen">
-    <div class="sheet-staerken-schwaechen">
-      <div class="sheet-staerken"> 
-        <h1 data-i18n="staerken"></h1>
-        <textarea name="attr_staerken" value=""></textarea>
-      </div>
-      <div class="sheet-schwaechen"> 
-        <h1 data-i18n="schwaechen"></h1>
-        <textarea name="attr_schwaechen" value=""></textarea>
-      </div>
+  <div class="sheet-staerken-schwaechen sheet-horde-zeile">
+    <div class="sheet-staerken"> 
+      <h2 data-i18n="staerken"></h2>
+      <textarea name="attr_staerken" value=""></textarea>
     </div>
-    <div class="sheet-notizen">
-      <h1 data-i18n="notizen"></h1>
-      <textarea name="attr_notizen" value=""></textarea>
+    <div class="sheet-schwaechen"> 
+      <h1 data-i18n="schwaechen"></h1>
+      <textarea name="attr_schwaechen" value=""></textarea>
     </div>
   </div>
-  <div class="sheet-portrait-vergangenheit-inventar">
+  <div class="sheet-notizen sheet-horde-zeile">
+    <h2 data-i18n="notizen"></h2>
+    <textarea name="attr_notizen" value=""></textarea>
+  </div>
+  <div class="sheet-portrait-vergangenheit-inventar sheet-horde-zeile">
     <div class="sheet-portrait"><img name="attr_character_avatar"/><span data-i18n="info-charakterbild"></span></div>
     <div class="sheet-vergangenheit"> 
       <h1 data-i18n="vergangenheit"></h1>
       <textarea name="attr_vergangenheit" value=""></textarea>
     </div>
-    <div class="sheet-inventar"> 
-      <h1 data-i18n="waffen-accessoirs"></h1>
-      <!-- MIXIN : src/html/sheet.pug : item-->
-      <div class="sheet-item">
-        <label for="attr_linke-hand" data-i18n="linke-hand"></label>
-        <input type="text" value="" name="attr_linke-hand"/>
-      </div>
-      <!-- MIXIN : src/html/sheet.pug : item-->
-      <div class="sheet-item">
-        <label for="attr_rechte-hand" data-i18n="rechte-hand"></label>
-        <input type="text" value="" name="attr_rechte-hand"/>
-      </div>
-      <!-- MIXIN : src/html/sheet.pug : item-->
-      <div class="sheet-item">
-        <label for="attr_finger-1" data-i18n="finger-1"></label>
-        <input type="text" value="" name="attr_finger-1"/>
-      </div>
-      <!-- MIXIN : src/html/sheet.pug : item-->
-      <div class="sheet-item">
-        <label for="attr_finger-2" data-i18n="finger-2"></label>
-        <input type="text" value="" name="attr_finger-2"/>
-      </div>
-      <!-- MIXIN : src/html/sheet.pug : item-->
-      <div class="sheet-item">
-        <label for="attr_hals" data-i18n="hals"></label>
-        <input type="text" value="" name="attr_hals"/>
-      </div>
-      <!-- MIXIN : src/html/sheet.pug : item-->
-      <div class="sheet-item">
-        <label for="attr_ruecken" data-i18n="ruecken"></label>
-        <input type="text" value="" name="attr_ruecken"/>
-      </div>
-      <h1 data-i18n="rucksack"></h1>
-      <textarea name="attr_rucksack" value=""></textarea>
+  </div>
+  <div class="sheet-inventar sheet-horde-zeile"> 
+    <h1 data-i18n="waffen-accessoirs"></h1>
+    <!-- MIXIN : src/html/sheet.pug : item-->
+    <div class="sheet-item">
+      <label for="attr_linke-hand" data-i18n="linke-hand"></label>
+      <input type="text" value="" name="attr_linke-hand"/>
     </div>
+    <!-- MIXIN : src/html/sheet.pug : item-->
+    <div class="sheet-item">
+      <label for="attr_rechte-hand" data-i18n="rechte-hand"></label>
+      <input type="text" value="" name="attr_rechte-hand"/>
+    </div>
+    <!-- MIXIN : src/html/sheet.pug : item-->
+    <div class="sheet-item">
+      <label for="attr_finger-1" data-i18n="finger-1"></label>
+      <input type="text" value="" name="attr_finger-1"/>
+    </div>
+    <!-- MIXIN : src/html/sheet.pug : item-->
+    <div class="sheet-item">
+      <label for="attr_finger-2" data-i18n="finger-2"></label>
+      <input type="text" value="" name="attr_finger-2"/>
+    </div>
+    <!-- MIXIN : src/html/sheet.pug : item-->
+    <div class="sheet-item">
+      <label for="attr_hals" data-i18n="hals"></label>
+      <input type="text" value="" name="attr_hals"/>
+    </div>
+    <!-- MIXIN : src/html/sheet.pug : item-->
+    <div class="sheet-item">
+      <label for="attr_ruecken" data-i18n="ruecken"></label>
+      <input type="text" value="" name="attr_ruecken"/>
+    </div>
+    <h1 data-i18n="rucksack"></h1>
+    <textarea name="attr_rucksack" value=""></textarea>
   </div>
 </div>
 <!--

@@ -84,9 +84,46 @@ Bugs & Issues
     </div>
   </div>
   <div class="sheet-portrait-vergangenheit-inventar">
-    <div class="sheet-portrait">Charakterbild</div>
-    <div class="sheet-vergangenheit">Vergangenheit</div>
-    <div class="sheet-inventar">Waffen / Accessoires</div>
+    <div class="sheet-portrait"><img name="attr_character_avatar"/><span data-i18n="info-charakterbild"></span></div>
+    <div class="sheet-vergangenheit"> 
+      <h1 data-i18n="vergangenheit"></h1>
+      <textarea name="attr_vergangenheit" value=""></textarea>
+    </div>
+    <div class="sheet-inventar"> 
+      <h1 data-i18n="waffen-accessoirs"></h1>
+      <!-- MIXIN : src/html/sheet.pug : item-->
+      <div class="sheet-item">
+        <label for="attr_linke-hand" data-i18n="linke-hand"></label>
+        <input type="text" value="" name="attr_linke-hand"/>
+      </div>
+      <!-- MIXIN : src/html/sheet.pug : item-->
+      <div class="sheet-item">
+        <label for="attr_rechte-hand" data-i18n="rechte-hand"></label>
+        <input type="text" value="" name="attr_rechte-hand"/>
+      </div>
+      <!-- MIXIN : src/html/sheet.pug : item-->
+      <div class="sheet-item">
+        <label for="attr_finger-1" data-i18n="finger-1"></label>
+        <input type="text" value="" name="attr_finger-1"/>
+      </div>
+      <!-- MIXIN : src/html/sheet.pug : item-->
+      <div class="sheet-item">
+        <label for="attr_finger-2" data-i18n="finger-2"></label>
+        <input type="text" value="" name="attr_finger-2"/>
+      </div>
+      <!-- MIXIN : src/html/sheet.pug : item-->
+      <div class="sheet-item">
+        <label for="attr_hals" data-i18n="hals"></label>
+        <input type="text" value="" name="attr_hals"/>
+      </div>
+      <!-- MIXIN : src/html/sheet.pug : item-->
+      <div class="sheet-item">
+        <label for="attr_ruecken" data-i18n="ruecken"></label>
+        <input type="text" value="" name="attr_ruecken"/>
+      </div>
+      <h1 data-i18n="rucksack"></h1>
+      <textarea name="attr_rucksack" value=""></textarea>
+    </div>
   </div>
 </div>
 <!--

@@ -17,6 +17,12 @@ mixin attribut(attribut)
         span(data-i18n="bonus")
         input(type="number" value="" name="attr_"+attribut+"_bonus")
 
+mixin item(item)
+    // MIXIN : src/html/sheet.pug : item
+    div(class="sheet-item")
+        label(for="attr_"+item data-i18n=item)
+        input(type="text" value="" name="attr_"+item)
+
 div(class="sheet-horde")
     div(class="sheet-kopfzeile")
         div(class="sheet-logo") Logo 
@@ -48,9 +54,23 @@ div(class="sheet-horde")
             h1(data-i18n="notizen")
             textarea(name="attr_notizen" value="")
     div(class="sheet-portrait-vergangenheit-inventar")
-        div(class="sheet-portrait") Charakterbild
-        div(class="sheet-vergangenheit") Vergangenheit
-        div(class="sheet-inventar") Waffen / Accessoires
+        div(class="sheet-portrait")
+            img(name="attr_character_avatar")
+            span(data-i18n="info-charakterbild")
+        div(class="sheet-vergangenheit") 
+            h1(data-i18n="vergangenheit")
+            textarea(name="attr_vergangenheit" value="")
+        div(class="sheet-inventar") 
+            h1(data-i18n="waffen-accessoirs")
+            +item("linke-hand")
+            +item("rechte-hand")
+            +item("finger-1")
+            +item("finger-2")
+            +item("hals")
+            +item("ruecken")
+            h1(data-i18n="rucksack")
+            textarea(name="attr_rucksack" value="")
+
 
 //
     ********************************

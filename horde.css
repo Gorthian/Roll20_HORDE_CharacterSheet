@@ -155,3 +155,47 @@ div.sheet-horde div.sheet-attribute button.sheet-d20
 div.sheet-horde h2 {
 	justify-self: center;
 }
+
+/* Rolltemplates */
+.sheet-rolltemplate-attributsprobe div.sheet-template-container {
+	background-color: whitesmoke;
+	background-image: url(http://gorthian.de/roll20/horde/background.webp);
+	border-style: solid;
+	border-width: 2px;
+	border-color:#E68300;
+
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: auto;
+}
+
+.sheet-rolltemplate-attributsprobe div.sheet-template-container div.sheet-template-header,
+.sheet-rolltemplate-attributsprobe div.sheet-template-container div.sheet-template-desc {
+	background-color: #8F5830;
+	border-style: solid;
+	border-width: 2px;
+	border-color:#E68300;
+
+	justify-self: stretch;
+
+	text-align: center;
+	font-weight: bold;
+	font-size: larger;
+	color: #E68300;
+}
+
+.sheet-rolltemplate-attributsprobe div.sheet-template-container div.sheet-template-row {
+	justify-self: stretch;
+
+	display: grid;
+	grid-template-columns: 25% 75%;
+}
+
+.sheet-rolltemplate-attributsprobe .inlinerollresult {
+	background-color	: unset !important; /*Important wird für den Darkmode benötigt*/
+	border				: unset !important; /*Important wird für den Darkmode benötigt*/
+	padding				: unset;
+	font-weight			: unset;
+	cursor				: help;
+	font-size			: 1em;
+}

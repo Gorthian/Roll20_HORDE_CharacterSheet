@@ -1,6 +1,6 @@
 //-
     CREATED by          Gorthian
-    Letzte Änderung		2025-03-22
+    Letzte Änderung		2025-03-23
 
 //
     ********************************
@@ -9,9 +9,14 @@
 
 rolltemplate(class="sheet-rolltemplate-attributsprobe")
     div(class="sheet-template-container")
-    div(class="sheet-template-header") {{attribut}} vs {{attributswert}}
-    div(class="sheet-template-row") {{wurf}}
-    div(class="sheet-template-desc") Text
+        div(class="sheet-template-header") {{attribut}} vs {{computed::schwierigkeit}}
+        div(class="sheet-template-row")
+            div(class="sheet-template-column") Bonus : 
+            div(class="sheet-template-column") {{computed::bonus}}
+        div(class="sheet-template-row") 
+            div(class="sheet-template-column") Wurf: 
+            div(class="sheet-template-column") {{computed::wurf}}
+        div(class="sheet-template-desc") {{computed::beschreibung}}
 
 //
     ********************************

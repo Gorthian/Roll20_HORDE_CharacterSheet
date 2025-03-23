@@ -1,6 +1,6 @@
 //-
     CREATED by          Gorthian
-    Letzte Änderung		2025-03-04
+    Letzte Änderung		2025-03-23
 
 //
     ********************************
@@ -19,11 +19,35 @@ mixin attribut(attribut)
         span(data-i18n="bonus")
         input(type="number" value="" name="attr_"+attribut+"_bonus")
 
-mixin item(item)
+mixin item(ort)
     // MIXIN : src/html/sheet.pug : item
     div(class="sheet-item")
-        label(for="attr_"+item data-i18n=item)
-        input(type="text" value="" name="attr_"+item)
+        label(for="attr_"+ort data-i18n=ort)
+        input(type="text" value="" name="attr_"+ort)        
+
+mixin waffe(ort)
+    // MIXIN : src/html/sheet.pug : waffe
+    div(class="sheet-waffe")
+        div(class="sheet-waffe-ort")
+            label(for="attr_"+ort data-i18n=ort)
+        div(class="sheet-waffe-name")
+            input(type="text" value="" name="attr_"+ort)
+        div(class="sheet-waffe-attribut")
+            select(name="attr_"+ort+"_attribut")
+                option(value="") -
+                option(value="intelligenz" data-i18n="intelligenz")
+                option(value="mut" data-i18n="mut")
+                option(value="koerperkraft" data-i18n="koerperkraft")
+                option(value="geschick" data-i18n="geschick")
+                option(value="charisma" data-i18n="charisma")
+        div(class="sheet-waffe-schaden")
+            input(type="number" value="1" name="attr_"+ort+"_schaden")
+            span(data-i18n="d6")
+        div(class="sheet-waffe-notiz")
+            input(type="text" value="" name="attr_"+ort+"_notiz")
+        div(class="sheet-waffe-angriff")
+            button(class="sheet-d6" type="action" name="act_angriff-"+ort)
+                img(src="http://gorthian.de/roll20/horde/d6.webp")
 
 div(class="sheet-horde")
     div(class="sheet-logo")
@@ -60,8 +84,8 @@ div(class="sheet-horde")
         textarea(name="attr_vergangenheit" value="")
     div(class="sheet-inventar sheet-horde-zeile") 
         h2(data-i18n="waffen-accessoirs")
-        +item("linke-hand")
-        +item("rechte-hand")
+        +waffe("linke-hand")
+        +waffe("rechte-hand")
         +item("finger-1")
         +item("finger-2")
         +item("hals")

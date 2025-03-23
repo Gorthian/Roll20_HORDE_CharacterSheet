@@ -32,6 +32,47 @@ function attributsprobe(attribut) {
     });
 }
 
+function angriff(waffe) {
+    console.log("Starte Angriffs");
+    getAttrs([waffe,waffe+"_attribut",waffe+"_schaden",waffe+"_notiz"], function(values) {
+        let name = values[waffe]||"";
+        let attribut = values[waffe+"_attribut"]||"";
+        let schaden = parseInt(values[waffe+"_schaden"]||1);
+        let notiz = values[waffe+"_notiz"]||"";
+
+        startRoll("&{template:angriff} {{waffe="+name+"}} {{attribut="+getTranslationByKey(attribut)+"}} {{wurf=[["+schaden+"d6]]}} {{notiz="+notiz+"}} {{fehlschlag=[[0]]}} {{leichter_treffer=[[0]]}} {{mittlerer_treffer=[[0]]}} {{kritischer_treffer=[[0]]}}", (results) => {
+            const wuerfel = results.results.wurf.dice;
+            const wurf = results.results.wurf.dice.toString()
+            let fehlschlag = 0;
+            let leichter_treffer = 0;
+            let mittlerer_treffer = 0;
+            let kritischer_treffer = 0;
+
+            for (ergebnis of wuerfel) {
+                if (ergebnis == 1) fehlschlag = fehlschlag +1;
+                if (ergebnis == 2) leichter_treffer = leichter_treffer +1;
+                if (ergebnis == 3) leichter_treffer = leichter_treffer +1;
+                if (ergebnis == 4) mittlerer_treffer = mittlerer_treffer +1;
+                if (ergebnis == 5) mittlerer_treffer = mittlerer_treffer +1;
+                if (ergebnis == 6) kritischer_treffer = kritischer_treffer +1;
+            }
+
+            console.log(fehlschlag+","+leichter_treffer+","+mittlerer_treffer+","+kritischer_treffer);
+
+            finishRoll(
+                results.rollId,
+                {
+                    wurf: wurf,
+                    fehlschlag: fehlschlag,
+                    leichter_treffer: leichter_treffer,
+                    mittlerer_treffer: mittlerer_treffer,
+                    kritischer_treffer: kritischer_treffer
+                }
+            )
+        });
+    });
+}
+
 on("clicked:probe-intelligenz", function() {
     attributsprobe("intelligenz");    
 });
@@ -50,4 +91,12 @@ on("clicked:probe-geschick", function() {
 
 on("clicked:probe-charisma", function() {
     attributsprobe("charisma");    
+});
+
+on("clicked:angriff-linke-hand", function() {
+    angriff("linke-hand");    
+});
+
+on("clicked:angriff-rechte-hand", function() {
+    angriff("rechte-hand");    
 });

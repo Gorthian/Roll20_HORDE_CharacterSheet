@@ -92,15 +92,61 @@ Bugs & Issues
   </div>
   <div class="sheet-inventar sheet-horde-zeile"> 
     <h2 data-i18n="waffen-accessoirs"></h2>
-    <!-- MIXIN : src/html/sheet.pug : item-->
-    <div class="sheet-item">
-      <label for="attr_linke-hand" data-i18n="linke-hand"></label>
-      <input type="text" value="" name="attr_linke-hand"/>
+    <!-- MIXIN : src/html/sheet.pug : waffe-->
+    <div class="sheet-waffe">
+      <div class="sheet-waffe-ort">
+        <label for="attr_linke-hand" data-i18n="linke-hand"></label>
+      </div>
+      <div class="sheet-waffe-name">
+        <input type="text" value="" name="attr_linke-hand"/>
+      </div>
+      <div class="sheet-waffe-attribut">
+        <select name="attr_linke-hand_attribut">
+          <option value="">-</option>
+          <option value="intelligenz" data-i18n="intelligenz"></option>
+          <option value="mut" data-i18n="mut"></option>
+          <option value="koerperkraft" data-i18n="koerperkraft"></option>
+          <option value="geschick" data-i18n="geschick"></option>
+          <option value="charisma" data-i18n="charisma"></option>
+        </select>
+      </div>
+      <div class="sheet-waffe-schaden">
+        <input type="number" value="1" name="attr_linke-hand_schaden"/><span data-i18n="d6"></span>
+      </div>
+      <div class="sheet-waffe-notiz">
+        <input type="text" value="" name="attr_linke-hand_notiz"/>
+      </div>
+      <div class="sheet-waffe-angriff">
+        <button class="sheet-d6" type="action" name="act_angriff-linke-hand"><img src="http://gorthian.de/roll20/horde/d6.webp"/></button>
+      </div>
     </div>
-    <!-- MIXIN : src/html/sheet.pug : item-->
-    <div class="sheet-item">
-      <label for="attr_rechte-hand" data-i18n="rechte-hand"></label>
-      <input type="text" value="" name="attr_rechte-hand"/>
+    <!-- MIXIN : src/html/sheet.pug : waffe-->
+    <div class="sheet-waffe">
+      <div class="sheet-waffe-ort">
+        <label for="attr_rechte-hand" data-i18n="rechte-hand"></label>
+      </div>
+      <div class="sheet-waffe-name">
+        <input type="text" value="" name="attr_rechte-hand"/>
+      </div>
+      <div class="sheet-waffe-attribut">
+        <select name="attr_rechte-hand_attribut">
+          <option value="">-</option>
+          <option value="intelligenz" data-i18n="intelligenz"></option>
+          <option value="mut" data-i18n="mut"></option>
+          <option value="koerperkraft" data-i18n="koerperkraft"></option>
+          <option value="geschick" data-i18n="geschick"></option>
+          <option value="charisma" data-i18n="charisma"></option>
+        </select>
+      </div>
+      <div class="sheet-waffe-schaden">
+        <input type="number" value="1" name="attr_rechte-hand_schaden"/><span data-i18n="d6"></span>
+      </div>
+      <div class="sheet-waffe-notiz">
+        <input type="text" value="" name="attr_rechte-hand_notiz"/>
+      </div>
+      <div class="sheet-waffe-angriff">
+        <button class="sheet-d6" type="action" name="act_angriff-rechte-hand"><img src="http://gorthian.de/roll20/horde/d6.webp"/></button>
+      </div>
     </div>
     <!-- MIXIN : src/html/sheet.pug : item-->
     <div class="sheet-item">
@@ -139,7 +185,7 @@ Bugs & Issues
 -->
 <rolltemplate class="sheet-rolltemplate-attributsprobe">
   <div class="sheet-template-container">
-    <div class="sheet-template-header">{{attribut}} vs {{computed::schwierigkeit}}</div>
+    <div class="sheet-template-header">{{attribut}} gegen {{computed::schwierigkeit}}</div>
     <div class="sheet-template-row">
       <div class="sheet-template-column">Bonus : </div>
       <div class="sheet-template-column">{{computed::bonus}}</div>
@@ -149,6 +195,39 @@ Bugs & Issues
       <div class="sheet-template-column">{{computed::wurf}}</div>
     </div>
     <div class="sheet-template-desc">{{computed::beschreibung}}</div>
+  </div>
+</rolltemplate>
+<rolltemplate class="sheet-rolltemplate-angriff">
+  <div class="sheet-template-container">
+    <div class="sheet-template-header">Angriff mit {{waffe}}</div>
+    <div class="sheet-template-row">
+      <div class="sheet-template-column">Attribut : </div>
+      <div class="sheet-template-column">{{attribut}}</div>
+    </div>
+    <div class="sheet-template-row"> 
+      <div class="sheet-template-column">Wurf: </div>
+      <div class="sheet-template-column">{{computed::wurf}}</div>
+    </div>{{#rollGreater() computed::fehlschlag 0}}
+    <div class="sheet-template-row"> 
+      <div class="sheet-template-column">Fehlschäge: </div>
+      <div class="sheet-template-column">{{computed::fehlschlag}}</div>
+    </div>{{/rollGreater() computed::fehlschlag 0}}
+    {{#rollGreater() computed::leichter_treffer 0}}
+    <div class="sheet-template-row"> 
+      <div class="sheet-template-column">Leichte Treffer: </div>
+      <div class="sheet-template-column">{{computed::leichter_treffer}}</div>
+    </div>{{/rollGreater() computed::leichter_treffer 0}}
+    {{#rollGreater() computed::mittlerer_treffer 0}}
+    <div class="sheet-template-row"> 
+      <div class="sheet-template-column">Mittlere Treffer: </div>
+      <div class="sheet-template-column">{{computed::mittlerer_treffer}}</div>
+    </div>{{/rollGreater() computed::mittlerer_treffer 0}}
+    {{#rollGreater() computed::kritischer_treffer 0}}
+    <div class="sheet-template-row"> 
+      <div class="sheet-template-column">Kritischer Treffer: </div>
+      <div class="sheet-template-column">{{computed::kritischer_treffer}}</div>
+    </div>{{/rollGreater() computed::kritischer_treffer 0}}
+    <div class="sheet-template-desc">{{notiz}}</div>
   </div>
 </rolltemplate>
 <!--
@@ -191,6 +270,47 @@ Bugs & Issues
     });
 }
 
+function angriff(waffe) {
+    console.log("Starte Angriffs");
+    getAttrs([waffe,waffe+"_attribut",waffe+"_schaden",waffe+"_notiz"], function(values) {
+        let name = values[waffe]||"";
+        let attribut = values[waffe+"_attribut"]||"";
+        let schaden = parseInt(values[waffe+"_schaden"]||1);
+        let notiz = values[waffe+"_notiz"]||"";
+
+        startRoll("&{template:angriff} {{waffe="+name+"}} {{attribut="+getTranslationByKey(attribut)+"}} {{wurf=[["+schaden+"d6]]}} {{notiz="+notiz+"}} {{fehlschlag=[[0]]}} {{leichter_treffer=[[0]]}} {{mittlerer_treffer=[[0]]}} {{kritischer_treffer=[[0]]}}", (results) => {
+            const wuerfel = results.results.wurf.dice;
+            const wurf = results.results.wurf.dice.toString()
+            let fehlschlag = 0;
+            let leichter_treffer = 0;
+            let mittlerer_treffer = 0;
+            let kritischer_treffer = 0;
+
+            for (ergebnis of wuerfel) {
+                if (ergebnis == 1) fehlschlag = fehlschlag +1;
+                if (ergebnis == 2) leichter_treffer = leichter_treffer +1;
+                if (ergebnis == 3) leichter_treffer = leichter_treffer +1;
+                if (ergebnis == 4) mittlerer_treffer = mittlerer_treffer +1;
+                if (ergebnis == 5) mittlerer_treffer = mittlerer_treffer +1;
+                if (ergebnis == 6) kritischer_treffer = kritischer_treffer +1;
+            }
+
+            console.log(fehlschlag+","+leichter_treffer+","+mittlerer_treffer+","+kritischer_treffer);
+
+            finishRoll(
+                results.rollId,
+                {
+                    wurf: wurf,
+                    fehlschlag: fehlschlag,
+                    leichter_treffer: leichter_treffer,
+                    mittlerer_treffer: mittlerer_treffer,
+                    kritischer_treffer: kritischer_treffer
+                }
+            )
+        });
+    });
+}
+
 on("clicked:probe-intelligenz", function() {
     attributsprobe("intelligenz");    
 });
@@ -209,6 +329,14 @@ on("clicked:probe-geschick", function() {
 
 on("clicked:probe-charisma", function() {
     attributsprobe("charisma");    
+});
+
+on("clicked:angriff-linke-hand", function() {
+    angriff("linke-hand");    
+});
+
+on("clicked:angriff-rechte-hand", function() {
+    angriff("rechte-hand");    
 });
 </script>
 <!--

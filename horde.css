@@ -60,7 +60,8 @@ div.sheet-horde div.sheet-kopfzeile div.sheet-klasse {
 
 div.sheet-horde div.sheet-attribute {
 	display: grid;
-	grid-template-columns: 20% 20% 20% 20% 20%;
+	grid-template-columns: repeat(5, 19.75%);
+    column-gap: 3px;
 }
 
 div.sheet-horde div.sheet-attribute div.sheet-attribut {
@@ -75,6 +76,21 @@ div.sheet-horde div.sheet-attribute div.sheet-attribut {
 
 div.sheet-horde div.sheet-attribute div.sheet-attribut * {
 	justify-self: center;
+	align-self: start;
+
+}
+
+div.sheet-horde div.sheet-attribute div.sheet-attribut-wert {
+	height: 0px;
+}
+
+div.sheet-horde div.sheet-attribute div.sheet-attribut-bonus {
+	z-index: 5;
+    display: grid;
+    position: relative;
+
+	top: 15px;
+    height: 45px;
 }
 
 div.sheet-horde div.sheet-staerken-schwaechen {

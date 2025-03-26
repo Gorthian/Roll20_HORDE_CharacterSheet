@@ -1,6 +1,6 @@
 //-
     CREATED by          Gorthian
-    Letzte Änderung		2025-03-23
+    Letzte Änderung		2025-03-26
 
 //
     ********************************
@@ -69,6 +69,10 @@ div(class="sheet-horde")
         +attribut("koerperkraft")
         +attribut("geschick")
         +attribut("charisma")
+    div(class="sheet-inventar sheet-horde-zeile")
+        h2(data-i18n="accessoirs")
+        +waffe("linke-hand")
+        +waffe("rechte-hand")
     div(class="sheet-staerken-schwaechen sheet-horde-zeile")
         div(class="sheet-staerken") 
             h2(data-i18n="staerken")
@@ -82,10 +86,8 @@ div(class="sheet-horde")
     div(class="sheet-vergangenheit sheet-horde-zeile") 
         h2(data-i18n="vergangenheit")
         textarea(name="attr_vergangenheit" value="")
-    div(class="sheet-inventar sheet-horde-zeile") 
-        h2(data-i18n="waffen-accessoirs")
-        +waffe("linke-hand")
-        +waffe("rechte-hand")
+    div(class="sheet-inventar sheet-horde-zeile")
+        h2(data-i18n="accessoirs")
         +item("finger-1")
         +item("finger-2")
         +item("hals")

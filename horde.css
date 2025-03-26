@@ -1,7 +1,7 @@
 /*
 	CREATED by 			Gorthian
 	Version				0.1
-	Letzte Änderung		2025-03-22
+	Letzte Änderung		2025-03-26
 	
 	GitHub				https://github.com/Gorthian/Roll20_HOREDE_CharacterSheet
 	Wiki				
@@ -134,16 +134,19 @@ div.sheet-horde div.sheet-inventar div.sheet-waffe div.sheet-waffe-schaden {
 	grid-auto-flow: column;
 }
 
+/* Eingabefelder */
 div.sheet-horde div.sheet-inventar div.sheet-item input[type="text"] {
 	width: 100%
 }
 
-/* Eingabefelder */
+div.sheet-horde input[type='number'] {
+	text-align: center;
+}
 
 div.sheet-horde input[type='number']::-webkit-inner-spin-button, 
 div.sheet-horde input[type='number']::-webkit-outer-spin-button { 
 	opacity: 0;
-	margin-left: -14px;
+	margin-left: -14px;	
 }
 
 div.sheet-horde div.sheet-attribute div.sheet-attribut input.sheet-d20 {

@@ -1,4 +1,5 @@
 {
+    "accessoirs"                 : "Accessoirs",
     "basis"                             : "Basis",
     "bonus"                             : "Bonus",
     "charisma"                          : "Charisma",
@@ -29,5 +30,5 @@
     "schwaechen"                        : "Schwächen",
     "staerken"                          : "Stärken",
     "vergangenheit"                     : "Vergangenheit",
-    "waffen-accessoirs"                 : "Waffen / Accessoirs"
+    "waffen"                            : "Waffen"
 }

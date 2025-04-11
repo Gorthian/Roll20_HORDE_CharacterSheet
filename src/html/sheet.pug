@@ -24,7 +24,7 @@ mixin item(ort)
     // MIXIN : src/html/sheet.pug : item
     div(class="sheet-item")
         label(for="attr_"+ort data-i18n=ort)
-        input(type="text" value="" name="attr_"+ort)        
+        input(type="text" value="" id="attr_"+ort name="attr_"+ort)        
 
 mixin waffe(ort)
     // MIXIN : src/html/sheet.pug : waffe
@@ -32,7 +32,7 @@ mixin waffe(ort)
         div(class="sheet-waffe-ort")
             label(for="attr_"+ort data-i18n=ort)
         div(class="sheet-waffe-name")
-            input(type="text" value="" name="attr_"+ort)
+            input(type="text" value="" name="attr_"+ort id="attr_"+ort)
         div(class="sheet-waffe-attribut")
             select(name="attr_"+ort+"_attribut")
                 option(value="") -

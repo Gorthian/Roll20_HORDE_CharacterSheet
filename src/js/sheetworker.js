@@ -73,30 +73,14 @@ function angriff(waffe) {
     });
 }
 
-on("clicked:probe-intelligenz", function() {
-    attributsprobe("intelligenz");    
+['intelligenz', 'mut', 'koerperkraft', 'geschick', 'charisma'].forEach(attr => {
+    on(`clicked:probe-${attr}`, function() {
+        attributsprobe(attr);
+    });
 });
 
-on("clicked:probe-mut", function() {
-    attributsprobe("mut");    
-});
-
-on("clicked:probe-koerperkraft", function() {
-    attributsprobe("koerperkraft");    
-});
-
-on("clicked:probe-geschick", function() {
-    attributsprobe("geschick");    
-});
-
-on("clicked:probe-charisma", function() {
-    attributsprobe("charisma");    
-});
-
-on("clicked:angriff-linke-hand", function() {
-    angriff("linke-hand");    
-});
-
-on("clicked:angriff-rechte-hand", function() {
-    angriff("rechte-hand");    
+['linke-hand', 'rechte-hand'].forEach(waffe => {
+    on(`clicked:angriff-${waffe}`, function() {
+        angriff(waffe);
+    });
 });

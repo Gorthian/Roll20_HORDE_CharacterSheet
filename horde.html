@@ -30,8 +30,8 @@ Bugs & Issues
       <input type="text" value="" name="attr_character_name"/>
     </div>
     <div class="sheet-lebenspunkte"><span data-i18n="lebenspunkte"></span>
-      <input type="number" value="" name="attr_hp"/>
-      <input type="number" value="" name="attr_hp_max"/>
+      <input type="number" value="50" name="attr_hp"/>
+      <input type="number" value="50" name="attr_hp_max"/>
     </div>
     <div class="sheet-klasse sheet-horde-pc-only"><span data-i18n="klasse"></span>
       <input type="text" value="" name="attr_klasse"/>
@@ -44,7 +44,7 @@ Bugs & Issues
     <!-- MIXIN : src/html/sheet.pug : attribut-->
     <div class="sheet-attribut">
       <h2 data-i18n="intelligenz"></h2>
-      <input class="sheet-d20" type="number" value="" name="attr_intelligenz"/>
+      <input class="sheet-d20" type="number" value="5" name="attr_intelligenz"/>
       <div class="sheet-attribut-wert">
         <button class="sheet-d20" type="action" name="act_probe-intelligenz"><img src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/HORDE/images/d20.png"/></button>
       </div>
@@ -55,7 +55,7 @@ Bugs & Issues
     <!-- MIXIN : src/html/sheet.pug : attribut-->
     <div class="sheet-attribut">
       <h2 data-i18n="mut"></h2>
-      <input class="sheet-d20" type="number" value="" name="attr_mut"/>
+      <input class="sheet-d20" type="number" value="5" name="attr_mut"/>
       <div class="sheet-attribut-wert">
         <button class="sheet-d20" type="action" name="act_probe-mut"><img src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/HORDE/images/d20.png"/></button>
       </div>
@@ -66,7 +66,7 @@ Bugs & Issues
     <!-- MIXIN : src/html/sheet.pug : attribut-->
     <div class="sheet-attribut">
       <h2 data-i18n="koerperkraft"></h2>
-      <input class="sheet-d20" type="number" value="" name="attr_koerperkraft"/>
+      <input class="sheet-d20" type="number" value="5" name="attr_koerperkraft"/>
       <div class="sheet-attribut-wert">
         <button class="sheet-d20" type="action" name="act_probe-koerperkraft"><img src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/HORDE/images/d20.png"/></button>
       </div>
@@ -77,7 +77,7 @@ Bugs & Issues
     <!-- MIXIN : src/html/sheet.pug : attribut-->
     <div class="sheet-attribut">
       <h2 data-i18n="geschick"></h2>
-      <input class="sheet-d20" type="number" value="" name="attr_geschick"/>
+      <input class="sheet-d20" type="number" value="5" name="attr_geschick"/>
       <div class="sheet-attribut-wert">
         <button class="sheet-d20" type="action" name="act_probe-geschick"><img src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/HORDE/images/d20.png"/></button>
       </div>
@@ -88,7 +88,7 @@ Bugs & Issues
     <!-- MIXIN : src/html/sheet.pug : attribut-->
     <div class="sheet-attribut">
       <h2 data-i18n="charisma"></h2>
-      <input class="sheet-d20" type="number" value="" name="attr_charisma"/>
+      <input class="sheet-d20" type="number" value="5" name="attr_charisma"/>
       <div class="sheet-attribut-wert">
         <button class="sheet-d20" type="action" name="act_probe-charisma"><img src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/HORDE/images/d20.png"/></button>
       </div>
@@ -142,14 +142,13 @@ Bugs & Issues
         <label for="attr_linke-hand" data-i18n="linke-hand"></label>
       </div>
       <div class="sheet-waffe-name">
-        <input type="text" value="" name="attr_linke-hand" id="attr_linke-hand"/>
+        <input type="text" value="Faust" name="attr_linke-hand" id="attr_linke-hand"/>
       </div>
       <div class="sheet-waffe-attribut">
-        <select name="attr_linke-hand_attribut">
-          <option value="">-</option>
+        <select name="attr_linke-hand_attribut">               
           <option value="intelligenz" data-i18n="intelligenz"></option>
           <option value="mut" data-i18n="mut"></option>
-          <option value="koerperkraft" data-i18n="koerperkraft"></option>
+          <option value="koerperkraft" data-i18n="koerperkraft" selected="selected"></option>
           <option value="geschick" data-i18n="geschick"></option>
           <option value="charisma" data-i18n="charisma"></option>
         </select>
@@ -170,14 +169,13 @@ Bugs & Issues
         <label for="attr_rechte-hand" data-i18n="rechte-hand"></label>
       </div>
       <div class="sheet-waffe-name">
-        <input type="text" value="" name="attr_rechte-hand" id="attr_rechte-hand"/>
+        <input type="text" value="Faust" name="attr_rechte-hand" id="attr_rechte-hand"/>
       </div>
       <div class="sheet-waffe-attribut">
-        <select name="attr_rechte-hand_attribut">
-          <option value="">-</option>
+        <select name="attr_rechte-hand_attribut">               
           <option value="intelligenz" data-i18n="intelligenz"></option>
           <option value="mut" data-i18n="mut"></option>
-          <option value="koerperkraft" data-i18n="koerperkraft"></option>
+          <option value="koerperkraft" data-i18n="koerperkraft" selected="selected"></option>
           <option value="geschick" data-i18n="geschick"></option>
           <option value="charisma" data-i18n="charisma"></option>
         </select>

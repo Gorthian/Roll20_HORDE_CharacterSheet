@@ -97,6 +97,43 @@ Bugs & Issues
       </div><span data-i18n="bonus">        </span>
     </div>
   </div>
+  <div class="sheet-inventar sheet-horde-zeile sheet-horde-npc-only">
+    <h2 data-i18n="angriff"></h2>
+    <!-- MIXIN : src/html/sheet.pug : waffe-->
+    <div class="sheet-waffe">
+      <div class="sheet-waffe-ort">
+        <label for="attr_linke-hand" data-i18n="linke-hand"></label>
+      </div>
+      <div class="sheet-waffe-name">
+        <input type="text" value="" name="attr_linke-hand" id="attr_linke-hand"/>
+      </div>
+      <div class="sheet-waffe-attribut">          </div>
+      <div class="sheet-waffe-schaden">           </div>
+      <div class="sheet-waffe-notiz">
+        <input type="text" value="" name="attr_linke-hand_notiz"/>
+      </div>
+      <div class="sheet-waffe-angriff">
+        <button class="sheet-d6" type="action" name="act_angriff-npc-linke-hand"><img src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/HORDE/images/d6.png"/></button>
+      </div>
+    </div>
+    <!-- MIXIN : src/html/sheet.pug : waffe-->
+    <div class="sheet-waffe">
+      <div class="sheet-waffe-ort">
+        <label for="attr_rechte-hand" data-i18n="rechte-hand"></label>
+      </div>
+      <div class="sheet-waffe-name">
+        <input type="text" value="" name="attr_rechte-hand" id="attr_rechte-hand"/>
+      </div>
+      <div class="sheet-waffe-attribut">          </div>
+      <div class="sheet-waffe-schaden">           </div>
+      <div class="sheet-waffe-notiz">
+        <input type="text" value="" name="attr_rechte-hand_notiz"/>
+      </div>
+      <div class="sheet-waffe-angriff">
+        <button class="sheet-d6" type="action" name="act_angriff-npc-rechte-hand"><img src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/HORDE/images/d6.png"/></button>
+      </div>
+    </div>
+  </div>
   <div class="sheet-inventar sheet-horde-zeile sheet-horde-pc-only">
     <h2 data-i18n="waffen"></h2>
     <!-- MIXIN : src/html/sheet.pug : waffe-->
@@ -258,6 +295,17 @@ Bugs & Issues
     <div class="sheet-template-desc">{{notiz}}</div>
   </div>
 </rolltemplate>
+<rolltemplate class="sheet-rolltemplate-angriff-npc">
+  <div class="sheet-template-container">
+    <div class="sheet-template-header">Angriff mit {{waffe}}        </div>
+    <div class="sheet-template-row">{{#rollTotal() computed::wurf 1}}<b>Fehlschlag</b>{{/rollTotal() computed::wurf 1}}
+      {{#rollGreater() computed::wurf 1}}
+      <div class="sheet-template-column">Schaden: </div>
+      <div class="sheet-template-column">{{computed::wurf}}    </div>{{/rollGreater() computed::wurf 1}}
+    </div>
+    <div class="sheet-template-desc">{{notiz}}</div>
+  </div>
+</rolltemplate>
 <!--
 ********************************
 * ENDE src/html/rolltemplates.pug
@@ -339,6 +387,26 @@ function angriff(waffe) {
     });
 }
 
+function angriff_npc(waffe) {
+    // console.log("Starte Angriffs");
+    getAttrs([waffe,waffe+"_notiz"], function(values) {
+        let name = values[waffe]||"";        
+        let notiz = values[waffe+"_notiz"]||"";
+
+        startRoll("&{template:angriff-npc} {{waffe="+name+"}} {{wurf=[[1d6]]}} {{notiz="+notiz+"}}", (results) => {
+            const wuerfel = results.results.wurf.dice;
+            const wurf = results.results.wurf.dice;            
+
+            finishRoll(
+                results.rollId,
+                {
+                    wurf: wurf
+                }
+            )
+        });
+    });
+}
+
 ['intelligenz', 'mut', 'koerperkraft', 'geschick', 'charisma'].forEach(attr => {
     on(`clicked:probe-${attr}`, function() {
         attributsprobe(attr);
@@ -348,6 +416,9 @@ function angriff(waffe) {
 ['linke-hand', 'rechte-hand'].forEach(waffe => {
     on(`clicked:angriff-${waffe}`, function() {
         angriff(waffe);
+    });
+    on(`clicked:angriff-npc-${waffe}`, function() {
+        angriff_npc(waffe);
     });
 });
 </script>
